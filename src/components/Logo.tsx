@@ -1,12 +1,23 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { assetUrl, brand } from "@/lib/brand";
 
 /** The brand logo from brand.json (optionally with the name beside it), or a wordmark when none is set. */
 export function Logo() {
+  const onHome = usePathname() === "/";
+
   return (
     <Link
       href="/"
       transitionTypes={["nav-back"]}
+      // Already home: a link to the same page doesn't move, so glide back up to the wall
+      onClick={(e) => {
+        if (!onHome) return;
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
       aria-label={`${brand.name} home`}
       className="flex items-center gap-2 text-[15px] font-bold tracking-[-0.04em] text-ink"
     >

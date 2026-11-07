@@ -14,10 +14,10 @@
     "pinterest": ""
   },
   "theme": {
-    "accent": "#8b5cff",
-    "ink": "#efecf6",
-    "mute": "#a59fb5",
-    "wall": "#221f2b",
+    "accent": "#4cc9ff",
+    "ink": "#eef4f8",
+    "mute": "#9aa7b3",
+    "wall": "#1f252e",
     "spotlight": 1,
     "haze": 1,
     "sans": "geist",
