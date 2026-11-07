@@ -1,0 +1,264 @@
+[
+  {
+    "slug": "ember-run",
+    "name": "Ember Run",
+    "line": "Running",
+    "colorway": "Signal Coral / Amber",
+    "price": 210,
+    "description": "A full-length visible air unit wrapped in an engineered coral mesh. Built for long miles, styled for longer nights.",
+    "details": [
+      "Engineered knit mesh",
+      "Full-length air unit",
+      "Rubber waffle outsole"
+    ],
+    "soldOut": [
+      "38",
+      "46"
+    ],
+    "scale": 0.9,
+    "image": {
+      "file": "shoe-01.png",
+      "width": 1017,
+      "height": 511
+    },
+    "gallery": []
+  },
+  {
+    "slug": "court-88-hi",
+    "name": "Court 88 Hi",
+    "line": "Basketball",
+    "colorway": "Forest / Bone",
+    "price": 165,
+    "description": "A late-80s court silhouette rebuilt in full-grain leather with a padded collar and a lockdown ankle strap.",
+    "details": [
+      "Full-grain leather",
+      "Hook & loop ankle strap",
+      "Cupsole construction"
+    ],
+    "soldOut": [
+      "44"
+    ],
+    "scale": 0.8,
+    "image": {
+      "file": "shoe-02.png",
+      "width": 977,
+      "height": 617
+    },
+    "gallery": []
+  },
+  {
+    "slug": "hangar-03",
+    "name": "Hangar 03",
+    "line": "Lifestyle",
+    "colorway": "Cobalt / Ice",
+    "price": 185,
+    "description": "Quilted patent panels inflated like a flight jacket, floating on twin translucent air pods. The flagship of the Hangar series.",
+    "details": [
+      "Quilted patent upper",
+      "Twin visible air pods",
+      "Breathable mesh tongue"
+    ],
+    "soldOut": [
+      "39"
+    ],
+    "scale": 0.9,
+    "image": {
+      "file": "shoe-03.png",
+      "width": 1055,
+      "height": 555
+    },
+    "gallery": []
+  },
+  {
+    "slug": "cloudbank",
+    "name": "Cloudbank",
+    "line": "Lifestyle",
+    "colorway": "Lilac Haze",
+    "price": 195,
+    "description": "Tonal suede and nubuck sculpted over a wave-form platform. Soft in every sense of the word.",
+    "details": [
+      "Suede & nubuck upper",
+      "Sculpted platform sole",
+      "Padded high collar"
+    ],
+    "soldOut": [],
+    "scale": 0.8,
+    "image": {
+      "file": "shoe-04.png",
+      "width": 884,
+      "height": 609
+    },
+    "gallery": []
+  },
+  {
+    "slug": "ridgeline",
+    "name": "Ridgeline",
+    "line": "Trail",
+    "colorway": "Graphite / Olive / Signal",
+    "price": 220,
+    "description": "An all-terrain trail runner with quick-pull laces, a protective rand and deep multi-directional lugs.",
+    "details": [
+      "Ripstop mesh upper",
+      "Quick-pull lacing",
+      "5mm multi-directional lugs"
+    ],
+    "soldOut": [
+      "38",
+      "39"
+    ],
+    "scale": 0.9,
+    "image": {
+      "file": "shoe-05.png",
+      "width": 1044,
+      "height": 518
+    },
+    "gallery": []
+  },
+  {
+    "slug": "terrace",
+    "name": "Terrace",
+    "line": "Classics",
+    "colorway": "Rose / Fuchsia / Gum",
+    "price": 130,
+    "description": "The terrace classic in brushed rose suede, finished with a fuchsia leather stripe and a vintage gum sole.",
+    "details": [
+      "Brushed suede upper",
+      "Leather side stripe",
+      "Natural gum outsole"
+    ],
+    "soldOut": [
+      "42"
+    ],
+    "scale": 0.88,
+    "image": {
+      "file": "shoe-06.png",
+      "width": 972,
+      "height": 450
+    },
+    "gallery": []
+  },
+  {
+    "slug": "block-hi",
+    "name": "Block Hi",
+    "line": "Classics",
+    "colorway": "Slate / Royal / Gum",
+    "price": 150,
+    "description": "A monolithic high-top in slate nubuck, split by a single royal-blue band over a translucent gum cupsole.",
+    "details": [
+      "Nubuck upper",
+      "Contrast foxing band",
+      "Translucent gum cupsole"
+    ],
+    "soldOut": [],
+    "scale": 0.8,
+    "image": {
+      "file": "shoe-07.png",
+      "width": 966,
+      "height": 592
+    },
+    "gallery": []
+  },
+  {
+    "slug": "void-slip",
+    "name": "Void Slip",
+    "line": "Atelier",
+    "colorway": "Bone / Clear",
+    "price": 240,
+    "description": "No laces, no logos, no noise. A single sheet of bone leather moulded over a frosted clear sole.",
+    "details": [
+      "Seamless nappa leather",
+      "Frosted TPU sole",
+      "Made in Portugal"
+    ],
+    "soldOut": [
+      "45",
+      "46"
+    ],
+    "scale": 0.88,
+    "image": {
+      "file": "shoe-08.png",
+      "width": 894,
+      "height": 371
+    },
+    "gallery": []
+  },
+  {
+    "slug": "rally-low",
+    "name": "Rally Low",
+    "line": "Court",
+    "colorway": "White / Coral",
+    "price": 140,
+    "description": "A clean court low in tumbled white leather with a coral heel wrap. The everyday pair.",
+    "details": [
+      "Tumbled leather",
+      "Contrast heel wrap",
+      "Stitched cupsole"
+    ],
+    "soldOut": [],
+    "scale": 0.88,
+    "image": {
+      "file": "shoe-09.png",
+      "width": 958,
+      "height": 453
+    },
+    "gallery": []
+  },
+  {
+    "slug": "prism-knit",
+    "name": "Prism Knit",
+    "line": "Running",
+    "colorway": "Sky / Coral / Volt",
+    "price": 175,
+    "description": "A sock-fit knit fading from sky to coral, locked onto a high-rebound volt foam midsole.",
+    "details": [
+      "Gradient sock knit",
+      "High-rebound foam",
+      "Laceless entry"
+    ],
+    "soldOut": [
+      "40"
+    ],
+    "scale": 0.9,
+    "image": {
+      "file": "shoe-mw6bb4sxqvxj.png",
+      "width": 991,
+      "height": 462
+    },
+    "gallery": []
+  },
+  {
+    "slug": "vapor-17-elite-sg-pro",
+    "name": "VAPOR 17 ELITE SG PRO",
+    "line": "Football",
+    "colorway": "Bright Crimson / Copper",
+    "price": 210,
+    "description": "A soft-ground speed boot. A sock-fit knit upper with a metallic copper stripe, locked onto a plate with screw-in studs for wet, heavy pitches.",
+    "details": [
+      "Sock-fit knit upper",
+      "Screw-in SG-Pro studs",
+      "Anti-clog traction plate"
+    ],
+    "soldOut": [
+      "38",
+      "39",
+      "42"
+    ],
+    "scale": 0.91,
+    "image": {
+      "file": "shoe-mw6cv081hv0i.png",
+      "width": 1400,
+      "height": 632,
+      "view": "side",
+      "facing": "left"
+    },
+    "gallery": [
+      {
+        "file": "shoe-mw6cq8v34yb2.png",
+        "width": 1400,
+        "height": 636,
+        "view": "side",
+        "facing": "right"
+      }
+    ]
+  }
+]

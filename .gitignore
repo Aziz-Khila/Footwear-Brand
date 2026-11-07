@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# brand studio: downloaded background-removal model and exported brand projects
+/.cache/
+/exports/

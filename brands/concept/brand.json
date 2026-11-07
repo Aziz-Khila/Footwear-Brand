@@ -1,0 +1,77 @@
+{
+  "id": "concept",
+  "name": "STRYD",
+  "tagline": "Ten pairs. One wall. Pick yours.",
+  "logo": "logo-mw6daagksyu0.png",
+  "logoText": true,
+  "favicon": "favicon-mw6daajphkwx.png",
+  "socials": {
+    "instagram": "@stryd",
+    "tiktok": "@stryd",
+    "x": "",
+    "youtube": "",
+    "facebook": "",
+    "pinterest": ""
+  },
+  "theme": {
+    "accent": "#8b5cff",
+    "ink": "#efecf6",
+    "mute": "#a59fb5",
+    "wall": "#221f2b",
+    "spotlight": 1,
+    "haze": 1,
+    "sans": "geist",
+    "mono": "geist-mono"
+  },
+  "copy": {
+    "collection": "Drop 03 — Hangar Collection",
+    "showroomLabel": "Showroom / Wall 01",
+    "wallHeadline": "Select a pair to take a closer look.",
+    "footerNote": "Free shipping over €150 — Returns within 30 days",
+    "checkoutNotice": "Checkout isn't connected yet."
+  },
+  "commerce": {
+    "currency": "EUR",
+    "locale": "en-IE",
+    "sizeSystem": "EU",
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46"
+    ],
+    "freeShippingThreshold": 150
+  },
+  "layout": {
+    "columns": 5
+  },
+  "landing": {
+    "manifesto": "Every pair on this wall was chosen to be looked at twice. Sculpted soles, honest materials and colour that holds its own on any street.",
+    "featured": [
+      "vapor-17-elite-sg-pro"
+    ],
+    "featuredLabel": "Featured drop",
+    "rackTitle": "The full rack",
+    "promises": [
+      {
+        "title": "Free shipping",
+        "body": "Tracked to your door within 48 hours on qualifying orders."
+      },
+      {
+        "title": "30-day returns",
+        "body": "Not the one? Send it back within 30 days, no questions asked."
+      },
+      {
+        "title": "Built to last",
+        "body": "Premium leathers, knits and foams, finished by hand."
+      }
+    ],
+    "closingTitle": "Find your pair.",
+    "newsletter": "New drops land here first. No spam, ever."
+  }
+}
