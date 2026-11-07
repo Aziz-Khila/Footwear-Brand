@@ -44,6 +44,25 @@ export function rememberPageOrigin(from: Element) {
   origin = r ? { x: r.left, y: r.top } : { x: 0, y: 0 };
 }
 
+let returnTo: string | null = null;
+
+/** The product page records its pair, so the wall can bring that pair on screen before zooming back out to it. */
+export function rememberReturn(slug: string) {
+  returnTo = slug;
+}
+
+/** Scrolls the wall so the pair being returned to sits mid-screen (back links use `scroll={false}`). */
+export function revealReturn() {
+  const slug = returnTo;
+  returnTo = null;
+  if (!slug) return;
+  const el = document.querySelector(`.wall [data-vt="unit-${slug}"]`);
+  if (!el) return;
+  const r = el.getBoundingClientRect();
+  const top = window.scrollY + r.top + r.height / 2 - window.innerHeight / 2;
+  window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
+}
+
 /**
  * Pseudo-element animations keep targeting `::view-transition-*(page)` after they end,
  * so with `fill: both` they would leak into the next transition. Drop them on finish:
@@ -85,14 +104,17 @@ export function cameraMove(name: string, types: string[]) {
   // Only the wall rides the camera. The product page clips its edge shoes, so scaling
   // it would expose the cut; it fades in place instead, where its neighbours line up
   // with the zoomed wall's (see wallMatchedGap) as the move settles.
-  // The wall's snapshot is drawn at the top-left of the group; when the home page was
-  // scrolled, `origin` puts it back where it was on screen.
+  // Zooming in, the old wall snapshot is drawn at the top-left of the group (which sits
+  // where the product page is), so `o` puts it back where it was on screen when scrolled.
+  // Zooming out, the group already sits where the (possibly scrolled) wall is, at `g`.
   const o = forward ? origin : { x: 0, y: 0 };
   origin = { x: 0, y: 0 };
+  const wallRect = forward ? null : target.closest(".vt-page")?.getBoundingClientRect();
+  const g = { x: wallRect?.left ?? 0, y: wallRect?.top ?? 0 };
   const identity = `translate(${o.x}px, ${o.y}px) scale(1)`;
   const zoomedIn = forward
     ? `translate(${s * o.x + tx}px, ${s * o.y + ty}px) scale(${s})`
-    : `translate(${-tx / s}px, ${-ty / s}px) scale(${1 / s})`;
+    : `translate(${(g.x - tx) / s - g.x}px, ${(g.y - ty) / s - g.y}px) scale(${1 / s})`;
   const wall = forward ? "old" : "new";
   const pdp = forward ? "new" : "old";
 
@@ -109,6 +131,12 @@ export function cameraMove(name: string, types: string[]) {
     ),
   );
 
+  // The leaving product page shares that group, so hold it where it was on screen
+  if (!forward && (g.x || g.y)) {
+    const hold = `translate(${-g.x}px, ${-g.y}px)`;
+    track(root.animate([{ transform: hold }, { transform: hold }], { ...timing, pseudoElement: pdpPseudo }));
+  }
+
   // The handover happens on a linear clock where the two layouts coincide: at the
   // very end when zooming in, at the very start when zooming out.
   const fade = (pseudoElement: string, from: number, to: number, start: number, end: number) =>
@@ -124,11 +152,24 @@ export function cameraMove(name: string, types: string[]) {
       ),
     );
 
+  // Phones show no neighbours beside the hero (title and panel sit above and below it),
+  // so nothing lines up at the handover: the surrounding wall dissolves during the move
+  // instead of vanishing on its last frame.
+  const matched = window.innerWidth >= 768;
+
   if (forward) {
-    fade(wallPseudo, 1, 0, 0.72, 1);
-    fade(pdpPseudo, 0, 1, 0.66, 0.96);
-  } else {
+    if (matched) {
+      fade(wallPseudo, 1, 0, 0.72, 1);
+      fade(pdpPseudo, 0, 1, 0.66, 0.96);
+    } else {
+      fade(wallPseudo, 1, 0, 0.12, 0.62);
+      fade(pdpPseudo, 0, 1, 0.5, 0.92);
+    }
+  } else if (matched) {
     fade(wallPseudo, 0, 1, 0, 0.16);
     fade(pdpPseudo, 1, 0, 0.02, 0.22);
+  } else {
+    fade(pdpPseudo, 1, 0, 0, 0.3);
+    fade(wallPseudo, 0, 1, 0.3, 0.88);
   }
 }

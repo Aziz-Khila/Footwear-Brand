@@ -58,6 +58,8 @@ export function Header() {
       href={s.id === "wall" ? "/" : `/#${s.id}`}
       // Back to the wall from a product zooms out; other sections just fade in
       transitionTypes={s.id === "wall" ? ["nav-back"] : undefined}
+      // The wall scrolls to the pair being returned to itself (see revealReturn)
+      scroll={s.id === "wall" ? false : undefined}
       onClick={go(s.id)}
       className={className}
     >

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { rememberPageOrigin } from "@/lib/camera";
+import { useLayoutEffect, useState } from "react";
+import { rememberPageOrigin, revealReturn } from "@/lib/camera";
 import { WALL_COLUMNS, formatPrice, pad, products } from "@/lib/products";
 import { ShoeOnShelf } from "./ShoeOnShelf";
 
@@ -10,6 +10,9 @@ export function Wall() {
   // Once a pair is clicked, only it may morph — otherwise wall shoes that reappear
   // as neighbours on the product page would be paired up too.
   const [active, setActive] = useState<string | null>(null);
+
+  // Runs inside the navigation commit, so the zoom-out's "after" snapshot already shows the pair on screen
+  useLayoutEffect(revealReturn, []);
 
   return (
     <ul

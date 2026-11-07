@@ -12,6 +12,7 @@ export function Logo() {
     <Link
       href="/"
       transitionTypes={["nav-back"]}
+      scroll={false}
       // Already home: a link to the same page doesn't move, so glide back up to the wall
       onClick={(e) => {
         if (!onHome) return;

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { wallMatchedGap } from "@/lib/camera";
+import { rememberReturn, wallMatchedGap } from "@/lib/camera";
 import { brand } from "@/lib/brand";
 import { useCart } from "@/lib/cart";
 import { SIZES, formatPrice, pad, type Product } from "@/lib/products";
@@ -47,6 +47,8 @@ export function ProductView({ product, prev, next, showPrev, showNext, index, to
 
   const mainRef = useRef<HTMLElement>(null);
 
+  useEffect(() => rememberReturn(product.slug), [product.slug]);
+
   useLayoutEffect(() => {
     const sync = () => {
       const el = mainRef.current;
@@ -67,7 +69,7 @@ export function ProductView({ product, prev, next, showPrev, showNext, index, to
       if (cartOpen || e.metaKey || e.ctrlKey || e.altKey) return;
       if (e.key === "ArrowLeft") router.push(`/p/${prev.slug}`, { transitionTypes: ["nav-prev"] });
       if (e.key === "ArrowRight") router.push(`/p/${next.slug}`, { transitionTypes: ["nav-next"] });
-      if (e.key === "Escape") router.push("/", { transitionTypes: ["nav-back"] });
+      if (e.key === "Escape") router.push("/", { transitionTypes: ["nav-back"], scroll: false });
       if (views.length > 1 && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
         e.preventDefault();
         setViewIndex((i) => (i + (e.key === "ArrowDown" ? 1 : -1) + views.length) % views.length);
@@ -244,7 +246,7 @@ export function ProductView({ product, prev, next, showPrev, showNext, index, to
 
       {/* Footer */}
       <footer className="label relative z-30 flex items-center justify-between px-5 pb-5 md:fixed md:inset-x-0 md:bottom-0 md:px-8">
-        <Link href="/" transitionTypes={["nav-back"]} className="transition-colors hover:text-ink">
+        <Link href="/" transitionTypes={["nav-back"]} scroll={false} className="transition-colors hover:text-ink">
           ← Back to wall
         </Link>
         <span className="hidden md:inline">← → Browse &nbsp;·&nbsp; Esc Wall</span>
